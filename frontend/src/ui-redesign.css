@@ -60,7 +60,7 @@ h1,h2,h3,h4,.brand b,.hero-wave,.hero-sticker b,.library-card h3,.lesson-step,.p
 .challenge-tally b,.challenge-tally span{display:block}
 .challenge-tally b{font:400 29px 'Bowlby One SC',Impact,sans-serif}
 .challenge-tally span{font-size:11px;font-weight:700;text-transform:uppercase}
-.challenge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.challenge-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .challenge-file{min-width:0;overflow:hidden;border:2px solid var(--ink);border-radius:7px;background:#fffdf5;box-shadow:4px 4px 0 var(--ink)}
 .challenge-file-top{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:92px;padding:16px 18px;border-bottom:2px solid var(--ink);background:#ffd84e}
 .challenge-tone-1 .challenge-file-top{background:#9fd1d4}
@@ -203,6 +203,7 @@ h1,h2,h3,h4,.brand b,.hero-wave,.hero-sticker b,.library-card h3,.lesson-step,.p
 .profile-toggle b{font-size:14px}
 .profile-stats span{font-size:11px}
 
+@media(max-width:1450px){.challenge-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:1050px){.challenge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.locker-layout.inspector-expanded{grid-template-columns:minmax(0,1fr) minmax(340px,.9fr)}.evidence-map-grid.inspector-expanded{grid-template-columns:minmax(0,1fr) minmax(340px,.9fr)}}
 @media(max-width:700px){
   .case-cards{grid-template-columns:minmax(0,1fr)}
