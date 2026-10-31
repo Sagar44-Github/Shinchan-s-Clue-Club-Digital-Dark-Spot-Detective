@@ -54,6 +54,18 @@ Optional AI extraction can be enabled by setting `OPENAI_API_KEY` and `OPENAI_MO
 4. **Conflict and Freshness Lab.** Candidate disagreements appear as exact source excerpts with dates and a suggested check. A manual comparison bench works for any two records, and the case timeline separates publication history from capture and patrol activity.
 5. **Verification Mission and solvable mystery.** Signals can become tasks that people mark open, in progress, verified, or dismissed and annotate with a note. Four unsolved Shinchan-themed challenge files open without a prefilled analysis. The School-Fair case adds a progressive hint route, a backend-held verdict, attempts and feedback, a sourced resolution, and an honest remaining gap.
 
+### Three independent clubhouse workspaces
+
+These are separate browser routes with their own workflows, filters, empty states, and animated 3D Shinchan companion. They are not tabs embedded in a case station:
+
+| Route | Workspace | What detectives do there |
+|---|---|---|
+| `/case-files` | Case Files | Search saved cases and the case library, filter unsolved versus guided mysteries, and open a case at its investigation station. |
+| `/mission-control` | Mission Control | Review open, in-progress, verified, and dismissed checks across all cases. Expand source-linked passages, record detective notes, update task status, and jump directly to the task in its owning case. |
+| `/evidence-vault` | Evidence Vault | Search source snapshots across cases, read captured text and SHA-256 provenance, and explicitly copy a source into another case. Reuse keeps the original case/source lineage and is idempotent. |
+
+Case stations also have addressable URLs (`/cases/{case_id}/{station}`), so a selected mission can deep-link to the right case and station and still work after refresh. Top navigation connects the standalone workspaces to the existing clubhouse, How to Play lessons, and case investigation flow.
+
 ### The complete playable demo: *Shinchan and the Great School-Fair Switcheroo*
 
 This is an explicitly fictional training mystery. The people, school, event, dates, and records are invented; it is not school or accessibility guidance.
@@ -119,12 +131,18 @@ Project artwork lives in [`assets/brand`](assets/brand): the clubhouse wordmark 
 
 ```mermaid
 flowchart LR
-  D[Detective] --> UI[React and TypeScript case room]
-  UI --> SCENE[React Three Fiber evidence desk]
+  D[Detective] --> UI[React and TypeScript clubhouse]
+  UI --> ROUTES[Independent Case Files, Mission Control, Evidence Vault, How to Play, and case stations]
+  ROUTES --> SCENE[React Three Fiber Shinchan scenes]
   UI -->|REST JSON| API[FastAPI service]
+  ROUTES -->|mission and vault queries| API
   API --> INTAKE[URL and file ingestion]
   INTAKE --> SNAP[Source snapshots and provenance]
   SNAP --> DB[(SQLite)]
+  DB -->|cross-case source snapshots| VAULT[Evidence Vault]
+  DB -->|case-linked tasks| MISSIONS[Mission Control]
+  VAULT -->|explicit provenance-preserving copy| DB
+  MISSIONS -->|open task in owning case| ROUTES
   API --> ENGINE[Deterministic coverage and signal engine]
   DB --> ENGINE
   ENGINE --> RESULT[Claims, coverage, findings, and tasks]
@@ -258,9 +276,11 @@ erDiagram
 sinchanHackathon/
 ├── frontend/
 │   ├── public/sample-files/       Fictional player-import file
-│   └── src/                       Case stations, evidence UI, 3D character and map
+│   └── src/                       Independent pages, case stations, evidence UI and 3D Shinchan
+│       ├── ClubhousePages.tsx     Case Files, Mission Control, and Evidence Vault
+│       └── club-pages.css         Responsive workspace layouts and route navigation
 ├── backend/
-│   ├── main.py                    FastAPI routes, imports, challenge and report endpoints
+│   ├── main.py                    FastAPI case, mission, vault, import, challenge, and report endpoints
 │   ├── engine.py                  Deterministic claims, coverage, signals, and tasks
 │   ├── database.py                SQLite schema, migrations, and persistence
 │   ├── catalog.json               Eight guided mystery files

@@ -55,6 +55,10 @@ class URLSource(BaseModel):
     published_date: str = ""
 
 
+class SourceReuse(BaseModel):
+    source_id: str = Field(min_length=1, max_length=120)
+
+
 class TaskUpdate(BaseModel):
     status: str | None = None
     notes: str | None = None
@@ -106,6 +110,16 @@ def clubhouse():
 @app.get("/api/cases")
 def cases():
     return db.list_cases()
+
+
+@app.get("/api/missions")
+def all_missions():
+    return db.list_missions()
+
+
+@app.get("/api/vault/sources")
+def evidence_vault_sources():
+    return db.list_vault_sources()
 
 
 @app.get("/api/library")
@@ -321,6 +335,15 @@ async def upload_source(case_id: str, file: UploadFile = File(...), title: str =
     if len(text.strip()) < 20:
         raise HTTPException(422, "No readable text was found in this file")
     return db.add_source(case_id, {"title": title.strip() or inferred_title or filename, "publisher": publisher.strip() or inferred_publisher, "published_date": published_date.strip() or inferred_date, "text": text[:250000], "source_type": f"uploaded {ext[1:]}", "original_filename": filename})
+
+
+@app.post("/api/cases/{case_id}/sources/reuse")
+def reuse_source(case_id: str, body: SourceReuse):
+    require_case(case_id)
+    source = db.copy_source_to_case(case_id, body.source_id)
+    if source is None:
+        raise HTTPException(404, "Choose a source from a different case")
+    return {"source": source, "already_present": source.pop("already_present", False), "case": db.get_case(case_id)}
 
 
 @app.delete("/api/cases/{case_id}/sources/{source_id}")

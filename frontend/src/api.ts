@@ -1,4 +1,4 @@
-import type { AnalysisRun, LibraryCase, ResearchCase, Requirement, Task } from './types'
+import type { AnalysisRun, LibraryCase, MissionItem, ResearchCase, Requirement, Task, VaultSource } from './types'
 
 const API = import.meta.env.VITE_API_BASE || 'http://localhost:8000/api'
 async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
@@ -19,6 +19,9 @@ export const api = {
   health: () => request<{ok:boolean;ai_configured:boolean}>('/health'),
   listCases: () => request<any[]>('/cases'),
   library: () => request<LibraryCase[]>('/library'),
+  missions: () => request<MissionItem[]>('/missions'),
+  vaultSources: () => request<VaultSource[]>('/vault/sources'),
+  reuseSource: (caseId:string, sourceId:string) => request<{source:VaultSource;already_present:boolean;case:ResearchCase}>(`/cases/${caseId}/sources/reuse`,{method:'POST',body:JSON.stringify({source_id:sourceId})}),
   openLibrary: (slug:string) => request<ResearchCase>(`/library/${slug}`,{method:'POST'}),
   submitChallenge: (id:string, answerId:string) => request<{correct:boolean;attempts:number;solved_at:string;hint?:string;resolution?:string;case:ResearchCase}>(`/cases/${id}/challenge/answer`,{method:'POST',body:JSON.stringify({answer_id:answerId})}),
   challengeHint: (id:string, level:number) => request<{level:number;hint:string;has_more:boolean}>(`/cases/${id}/challenge/hint`,{method:'POST',body:JSON.stringify({level})}),

@@ -71,7 +71,9 @@ def init_db() -> None:
             text TEXT NOT NULL,
             content_hash TEXT NOT NULL,
             original_filename TEXT NOT NULL DEFAULT '',
-            extraction_note TEXT NOT NULL DEFAULT ''
+            extraction_note TEXT NOT NULL DEFAULT '',
+            copied_from_case_id TEXT NOT NULL DEFAULT '',
+            copied_from_source_id TEXT NOT NULL DEFAULT ''
         );
         CREATE TABLE IF NOT EXISTS analysis_runs (
             id TEXT PRIMARY KEY,
@@ -108,6 +110,14 @@ def init_db() -> None:
         }
         for name, statement in migrations.items():
             if name not in columns:
+                db.execute(statement)
+        source_columns = {row[1] for row in db.execute("PRAGMA table_info(sources)").fetchall()}
+        source_migrations = {
+            "copied_from_case_id": "ALTER TABLE sources ADD COLUMN copied_from_case_id TEXT NOT NULL DEFAULT ''",
+            "copied_from_source_id": "ALTER TABLE sources ADD COLUMN copied_from_source_id TEXT NOT NULL DEFAULT ''",
+        }
+        for name, statement in source_migrations.items():
+            if name not in source_columns:
                 db.execute(statement)
 
 
@@ -164,6 +174,7 @@ def list_cases() -> list[dict[str, Any]]:
         case["challenge"] = public_challenge(challenge, reveal=case.get("status") == "solved")
         with connect() as db:
             case["source_count"] = db.execute("SELECT COUNT(*) FROM sources WHERE case_id=?", (case["id"],)).fetchone()[0]
+            case["task_count"] = db.execute("SELECT COUNT(*) FROM verification_tasks WHERE case_id=?", (case["id"],)).fetchone()[0]
             run = db.execute("SELECT created_at,method FROM analysis_runs WHERE case_id=? ORDER BY created_at DESC LIMIT 1", (case["id"],)).fetchone()
         case["last_analysis"] = dict(run) if run else None
         result.append(case)
@@ -300,3 +311,67 @@ def update_task(task_id: str, patch: dict[str, Any]) -> dict[str, Any] | None:
 def get_sources(case_id: str) -> list[dict[str, Any]]:
     with connect() as db:
         return [dict(r) for r in db.execute("SELECT * FROM sources WHERE case_id=? ORDER BY retrieved_at", (case_id,)).fetchall()]
+
+
+def list_vault_sources() -> list[dict[str, Any]]:
+    with connect() as db:
+        rows = db.execute("""
+            SELECT s.*, c.title AS case_title, c.status AS case_status, c.play_mode,
+                   COALESCE(origin.title, c.title) AS origin_case_title
+            FROM sources s
+            JOIN cases c ON c.id=s.case_id
+            LEFT JOIN cases origin ON origin.id=CASE
+                WHEN s.copied_from_case_id<>'' THEN s.copied_from_case_id
+                ELSE s.case_id END
+            ORDER BY s.retrieved_at DESC, s.title COLLATE NOCASE
+        """).fetchall()
+    return [dict(row) for row in rows]
+
+
+def list_missions() -> list[dict[str, Any]]:
+    with connect() as db:
+        rows = db.execute("""
+            SELECT t.*, c.title AS case_title, c.question AS case_question,
+                   c.status AS case_status, c.play_mode, c.updated_at AS case_updated_at
+            FROM verification_tasks t
+            JOIN cases c ON c.id=t.case_id
+            ORDER BY CASE t.status WHEN 'open' THEN 0 WHEN 'in-progress' THEN 1
+                     WHEN 'verified' THEN 2 ELSE 3 END,
+                     CASE t.priority WHEN 'high' THEN 0 WHEN 'normal' THEN 1 ELSE 2 END,
+                     t.updated_at DESC
+        """).fetchall()
+    return [{**dict(row), "evidence": load(row["evidence_json"], [])} for row in rows]
+
+
+def copy_source_to_case(destination_case_id: str, source_id: str) -> dict[str, Any] | None:
+    stamp = now_iso()
+    with connect() as db:
+        destination = db.execute("SELECT id FROM cases WHERE id=?", (destination_case_id,)).fetchone()
+        source = db.execute("""
+            SELECT s.*, c.title AS source_case_title
+            FROM sources s JOIN cases c ON c.id=s.case_id WHERE s.id=?
+        """, (source_id,)).fetchone()
+        if not destination or not source or source["case_id"] == destination_case_id:
+            return None
+        origin_case_id = source["copied_from_case_id"] or source["case_id"]
+        origin_source_id = source["copied_from_source_id"] or source["id"]
+        existing = db.execute("""
+            SELECT * FROM sources WHERE case_id=? AND copied_from_source_id=?
+        """, (destination_case_id, origin_source_id)).fetchone()
+        if existing:
+            return {**dict(existing), "already_present": True}
+        copy_id = uid("src")
+        db.execute("""
+            INSERT INTO sources(id,case_id,title,url,publisher,published_date,retrieved_at,
+                source_type,text,content_hash,original_filename,extraction_note,
+                copied_from_case_id,copied_from_source_id)
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        """, (
+            copy_id, destination_case_id, source["title"], source["url"], source["publisher"],
+            source["published_date"], source["retrieved_at"], source["source_type"], source["text"],
+            source["content_hash"], source["original_filename"], source["extraction_note"],
+            origin_case_id, origin_source_id,
+        ))
+        db.execute("UPDATE cases SET updated_at=? WHERE id=?", (stamp, destination_case_id))
+        copied = db.execute("SELECT * FROM sources WHERE id=?", (copy_id,)).fetchone()
+    return {**dict(copied), "already_present": False}
