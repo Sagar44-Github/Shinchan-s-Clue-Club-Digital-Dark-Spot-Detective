@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   ArrowDownToLine, ArrowLeft, ArrowRight, BookOpen, Check, CheckCircle2, ChevronDown, ChevronRight,
   CircleHelp, ClipboardCheck, ClipboardList, Clock3, FileText, Filter, FolderOpen, Globe2, Layers3,
-  Link2, LoaderCircle, Map, Maximize2, Menu, Minimize2, Plus, RefreshCw, Search, ShieldCheck, Sparkles, Trash2,
+  Link2, LoaderCircle, Map, Compass, Maximize2, Menu, Minimize2, Plus, RefreshCw, Search, ShieldCheck, Sparkles, Trash2,
   TriangleAlert, Upload, X, Archive, ListChecks, type LucideIcon,
 } from 'lucide-react'
 import DetectiveScene, { DetectiveBuddy } from './SceneLoader'
@@ -15,10 +15,11 @@ import { CaseTimeline, ConflictLab, RequirementStudio } from './Stations'
 import HowToPlay from './HowToPlay'
 import ProfilePanel from './ProfilePanel'
 import { CaseFilesPage, EvidenceVaultPage, MissionControlPage } from './ClubhousePages'
+import MissionAtlasPage from './MissionAtlasPage'
 import './club-pages.css'
 
 type Step = 'sources' | 'timeline' | 'map' | 'claims' | 'conflicts' | 'requirements' | 'mission' | 'briefing'
-type Screen = 'home'|'create'|'workspace'|'howto'|'case-files'|'mission-control'|'evidence-vault'
+type Screen = 'home'|'create'|'workspace'|'howto'|'case-files'|'mission-control'|'evidence-vault'|'mission-atlas'
 type ModalMode = 'text' | 'url' | 'file'
 type EvidencePick = {kind:'source'|'finding'|'requirement'|'task';id:string}
 const validStep=(value:string):value is Step=>['sources','timeline','map','claims','conflicts','requirements','mission','briefing'].includes(value)
@@ -29,12 +30,13 @@ function readRoute(){
   if(path==='/case-files')return{screen:'case-files' as Screen,step:'sources' as Step,caseId:null as string|null,taskId:null as string|null}
   if(path==='/mission-control')return{screen:'mission-control' as Screen,step:'sources' as Step,caseId:null as string|null,taskId:null as string|null}
   if(path==='/evidence-vault')return{screen:'evidence-vault' as Screen,step:'sources' as Step,caseId:null as string|null,taskId:null as string|null}
+  if(path==='/mission-atlas')return{screen:'mission-atlas' as Screen,step:'sources' as Step,caseId:null as string|null,taskId:null as string|null}
   const match=path.match(/^\/cases\/([^/]+)(?:\/([^/]+))?$/)
   if(match){const station=match[2]||'sources';return{screen:'workspace' as Screen,step:validStep(station)?station:'sources',caseId:decodeURIComponent(match[1]),taskId:new URLSearchParams(window.location.search).get('task')}}
   return{screen:'home' as Screen,step:'sources' as Step,caseId:null as string|null,taskId:null as string|null}
 }
 function routePath(screen:Screen,step:Step,caseId:string|null,taskId:string|null){
-  if(screen==='create')return'/new-case';if(screen==='howto')return'/how-to-play';if(screen==='case-files')return'/case-files';if(screen==='mission-control')return'/mission-control';if(screen==='evidence-vault')return'/evidence-vault'
+  if(screen==='create')return'/new-case';if(screen==='howto')return'/how-to-play';if(screen==='case-files')return'/case-files';if(screen==='mission-control')return'/mission-control';if(screen==='evidence-vault')return'/evidence-vault';if(screen==='mission-atlas')return'/mission-atlas'
   if(screen==='workspace'&&caseId)return`/cases/${encodeURIComponent(caseId)}/${step}${taskId?`?task=${encodeURIComponent(taskId)}`:''}`
   return'/'
 }
@@ -139,13 +141,14 @@ export default function App(){
   return <div className="app-shell">
     <header className="topbar">
       <button className="brand" onClick={()=>{navigate('home');setActive(null)}} aria-label="Shinchan's Clue Club home"><ShinchanClubLogo/><span><b>Shinchan's Clue Club</b><small>THE MYSTERY-SOLVING CLUBHOUSE</small></span></button>
-      <div className="topbar-right"><nav className="club-global-nav" aria-label="Clubhouse pages"><a href="/case-files" className={screen==='case-files'?'selected':''} onClick={e=>{e.preventDefault();navigate('case-files')}}><Archive size={15}/> Case Files</a><a href="/mission-control" className={screen==='mission-control'?'selected':''} onClick={e=>{e.preventDefault();navigate('mission-control')}}><ListChecks size={15}/> Missions</a><a href="/evidence-vault" className={screen==='evidence-vault'?'selected':''} onClick={e=>{e.preventDefault();navigate('evidence-vault')}}><FileText size={15}/> Evidence Vault</a><a href="/how-to-play" className={screen==='howto'?'selected':''} onClick={e=>{e.preventDefault();navigate('howto')}}><BookOpen size={15}/> How to play</a></nav><span className={`service-pill ${apiReady?'online':'offline'}`}><i/> {apiReady?'CASE ROOM ONLINE':'CASE SERVICE OFFLINE'}</span><span className={`ai-pill ${aiReady?'enabled':''}`}><Sparkles size={13}/>{aiReady?'AI ASSIST ON':'RULE CHECKS READY'}</span><button className={`avatar-button ${profileOpen?'profile-active':''}`} title={`${profileName}'s detective profile`} onClick={()=>setProfileOpen(v=>!v)} aria-label="Open detective profile" aria-haspopup="dialog"><ShinchanFace look={shinchanLook}/></button>{screen==='workspace'&&<button className="mobile-menu" onClick={()=>setMenuOpen(v=>!v)} aria-label="Toggle case navigation"><Menu size={19}/></button>}</div>
+      <div className="topbar-right"><nav className="club-global-nav" aria-label="Clubhouse pages"><a href="/mission-atlas" className={screen==='mission-atlas'?'selected':''} onClick={e=>{e.preventDefault();navigate('mission-atlas')}}><Compass size={15}/> 3D Atlas</a><a href="/case-files" className={screen==='case-files'?'selected':''} onClick={e=>{e.preventDefault();navigate('case-files')}}><Archive size={15}/> Case Files</a><a href="/mission-control" className={screen==='mission-control'?'selected':''} onClick={e=>{e.preventDefault();navigate('mission-control')}}><ListChecks size={15}/> Missions</a><a href="/evidence-vault" className={screen==='evidence-vault'?'selected':''} onClick={e=>{e.preventDefault();navigate('evidence-vault')}}><FileText size={15}/> Evidence Vault</a><a href="/how-to-play" className={screen==='howto'?'selected':''} onClick={e=>{e.preventDefault();navigate('howto')}}><BookOpen size={15}/> How to play</a></nav><span className={`service-pill ${apiReady?'online':'offline'}`}><i/> {apiReady?'CASE ROOM ONLINE':'CASE SERVICE OFFLINE'}</span><span className={`ai-pill ${aiReady?'enabled':''}`}><Sparkles size={13}/>{aiReady?'AI ASSIST ON':'RULE CHECKS READY'}</span><button className={`avatar-button ${profileOpen?'profile-active':''}`} title={`${profileName}'s detective profile`} onClick={()=>setProfileOpen(v=>!v)} aria-label="Open detective profile" aria-haspopup="dialog"><ShinchanFace look={shinchanLook}/></button>{screen==='workspace'&&<button className="mobile-menu" onClick={()=>setMenuOpen(v=>!v)} aria-label="Toggle case navigation"><Menu size={19}/></button>}</div>
     </header>
 
     {screen==='home'&&<Home cases={cases} library={library} busy={busy} error={error} profileName={profileName} look={shinchanLook} onNew={startCreate} onDemo={createDemo} onLibrary={openSample} onOpen={openCase} onLearn={()=>setScreen('howto')}/>}
     {screen==='case-files'&&<CaseFilesPage cases={cases} library={library} busy={busy} look={shinchanLook} onOpenCase={openCase} onOpenSample={openSample} onCreate={startCreate}/>}
     {screen==='mission-control'&&<MissionControlPage cases={cases} look={shinchanLook} onOpenCase={openCase}/>}
     {screen==='evidence-vault'&&<EvidenceVaultPage cases={cases} look={shinchanLook} onCaseUpdated={item=>{if(active?.id===item.id)setActive(item);void refreshCases()}}/>}
+    {screen==='mission-atlas'&&<MissionAtlasPage library={library} look={shinchanLook} busy={busy} onOpenSample={openSample}/>}
     {screen==='create'&&<CreateCase onCancel={()=>navigate('home')} busy={busy} error={error} look={shinchanLook} onCreate={async(data)=>{setBusy(true);setError('');try{const item=await api.createCase(data);setActive(item);setCases(await api.listCases());navigate('workspace','sources',item.id);flash('Your case folder is ready. Add the sources you want to compare.')}catch(e){setError((e as Error).message)}finally{setBusy(false)}}}/>}
     {screen==='howto'&&<HowToPlay look={shinchanLook} onHome={()=>setScreen('home')} onCreate={startCreate} onOpenSample={station=>openSample('scholarship-round-lab',station)} busy={busy}/>}
     {screen==='workspace'&&active&&<div className="workspace">

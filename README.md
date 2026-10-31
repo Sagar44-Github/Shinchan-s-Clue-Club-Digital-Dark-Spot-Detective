@@ -60,6 +60,7 @@ These are separate browser routes with their own workflows, filters, empty state
 
 | Route | Workspace | What detectives do there |
 |---|---|---|
+| `/mission-atlas` | 3D Kasukabe Mission Atlas | Orbit a low-poly neighborhood, choose a live case marker, filter by unsolved or guided mysteries, and launch the selected case from its landmark. Every marker also has a keyboard-accessible route-list control. |
 | `/case-files` | Case Files | Search saved cases and the case library, filter unsolved versus guided mysteries, and open a case at its investigation station. |
 | `/mission-control` | Mission Control | Review open, in-progress, verified, and dismissed checks across all cases. Expand source-linked passages, record detective notes, update task status, and jump directly to the task in its owning case. |
 | `/evidence-vault` | Evidence Vault | Search source snapshots across cases, read captured text and SHA-256 provenance, and explicitly copy a source into another case. Reuse keeps the original case/source lineage and is idempotent. |
@@ -132,7 +133,7 @@ Project artwork lives in [`assets/brand`](assets/brand): the clubhouse wordmark 
 ```mermaid
 flowchart LR
   D[Detective] --> UI[React and TypeScript clubhouse]
-  UI --> ROUTES[Independent Case Files, Mission Control, Evidence Vault, How to Play, and case stations]
+  UI --> ROUTES[Independent 3D Mission Atlas, Case Files, Mission Control, Evidence Vault, How to Play, and case stations]
   ROUTES --> SCENE[React Three Fiber Shinchan scenes]
   UI -->|REST JSON| API[FastAPI service]
   ROUTES -->|mission and vault queries| API
@@ -278,7 +279,9 @@ sinchanHackathon/
 │   ├── public/sample-files/       Fictional player-import file
 │   └── src/                       Independent pages, case stations, evidence UI and 3D Shinchan
 │       ├── ClubhousePages.tsx     Case Files, Mission Control, and Evidence Vault
-│       └── club-pages.css         Responsive workspace layouts and route navigation
+│       ├── club-pages.css         Responsive workspace layouts and route navigation
+│       ├── MissionAtlasPage.tsx   Playable case-location and filter interface
+│       └── MissionAtlasScene.tsx  Interactive low-poly 3D Kasukabe neighborhood
 ├── backend/
 │   ├── main.py                    FastAPI case, mission, vault, import, challenge, and report endpoints
 │   ├── engine.py                  Deterministic claims, coverage, signals, and tasks
