@@ -16,6 +16,21 @@ Information is often scattered across notices, web pages, documents, and informa
 
 **Shinchan's Clue Club** turns a research question into an inspectable case. It preserves source records, connects exact passages to requirements, flags potential conflicts and date uncertainty, and creates a human-owned verification mission. Shinchan is the guide through a real investigation workflow—not decoration around a generic dashboard.
 
+## How to run locally (Windows)
+
+**Requirements:** Python 3.11+ and Node.js 20.19+.
+
+Open PowerShell in the project folder and run:
+
+```powershell
+.\setup.ps1
+.\run.ps1
+```
+
+`setup.ps1` installs the Python and Node dependencies and creates the local backend settings file. `run.ps1` starts both the API and web app. Then open **http://localhost:5173**. The API runs on **http://localhost:8000**; its interactive docs are at **http://localhost:8000/docs**. The rule-based experience works without an API key.
+
+Optional AI extraction can be enabled by setting `OPENAI_API_KEY` and `OPENAI_MODEL` in `backend/.env`. The key stays on the backend. When enabled, source text is sent to the OpenAI API for advisory extraction; candidate quotations are checked against the stored source snapshot.
+
 ## Hackathon problem → implementation
 
 | Expected outcome | What Clue Club does | Where to see it |
@@ -124,29 +139,29 @@ flowchart LR
 ```mermaid
 sequenceDiagram
   actor Player
-  participant UI as React case room
-  participant API as FastAPI
-  participant Store as SQLite source store
-  participant Engine as Evidence engine
-  Player->>UI: Add a source to Source Locker
-  UI->>API: Upload file, fetch public URL, or submit excerpt
-  API->>API: Validate type, size, URL, and extracted text
-  API->>Store: Save provenance, snapshot text, and hash
+  participant UI
+  participant API
+  participant Store
+  participant Engine
+  Player->>UI: Add a source
+  UI->>API: Import file page or excerpt
+  API->>API: Validate source and extract text
+  API->>Store: Save source and provenance
   Player->>UI: Run the patrol
-  UI->>API: Request analysis for the case
-  API->>Store: Load case requirements and source snapshots
-  Store-->>API: Case and reviewed records
-  API->>Engine: Compare passages with requirements
-  Engine-->>API: Claims, coverage, conflicts, freshness, gaps, tasks
-  API->>Store: Save analysis run and task state
-  API-->>UI: Return source-linked findings and mission
-  Player->>UI: Inspect evidence, then submit a verdict
-  UI->>API: Submit selected challenge option
-  API->>API: Check the backend-held answer
-  API-->>UI: Feedback; reveal sourced resolution only when solved
-  Player->>UI: Export the briefing
-  UI->>API: Request Markdown report
-  API-->>UI: Return report with unresolved items intact
+  UI->>API: Analyze the case
+  API->>Store: Load requirements and sources
+  Store-->>API: Return case records
+  API->>Engine: Compare passages
+  Engine-->>API: Return claims coverage signals and tasks
+  API->>Store: Save analysis and task state
+  API-->>UI: Return findings and mission
+  Player->>UI: Inspect evidence and submit verdict
+  UI->>API: Submit selected answer
+  API->>API: Check answer on the server
+  API-->>UI: Return feedback and solved explanation
+  Player->>UI: Export briefing
+  UI->>API: Request report
+  API-->>UI: Return report with open tasks
 ```
 
 ### Data relationships
@@ -264,19 +279,6 @@ sinchanHackathon/
 ```
 
 The guided archive includes **8 mysteries and 24 fictional source records**. The unsolved challenge library contains **4 files and 15 starting fictional records**, plus the School-Fair player's separate Markdown import.
-
-## Run locally on Windows
-
-Requirements: **Python 3.11+** and **Node.js 20.19+**.
-
-```powershell
-.\setup.ps1
-.\run.ps1
-```
-
-Open **http://localhost:5173**. The API runs at **http://localhost:8000** and its OpenAPI page is **http://localhost:8000/docs**. `setup.ps1` installs dependencies and creates `backend/.env` from the example if needed. `run.ps1` starts both services.
-
-The rule-based workflow needs no secrets or external AI account. To enable optional AI extraction, configure `OPENAI_API_KEY` and `OPENAI_MODEL` in `backend/.env`. The key stays on the backend. With AI configured, source text is sent from the backend to the OpenAI API for advisory extraction; accepted quotes are validated against the source snapshot. Without AI, the local rule checks still run and say so.
 
 ## Safety, privacy, and limits
 
