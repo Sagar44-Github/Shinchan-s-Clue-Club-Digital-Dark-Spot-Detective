@@ -1,0 +1,2 @@
+.scene-loading{display:flex;min-height:300px;align-items:center;justify-content:center;gap:9px;flex-direction:column;background:linear-gradient(135deg,#e5f1f1,#f8eccf);color:#887658;font:10px 'DM Mono',monospace}
+.scene-loading.scene-compact{min-height:220px;height:100%;border-radius:inherit}

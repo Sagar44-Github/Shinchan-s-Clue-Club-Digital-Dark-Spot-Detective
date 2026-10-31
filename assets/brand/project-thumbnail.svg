@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Shinchan's Clue Club — solve the mystery in the evidence</title>
+  <desc id="desc">A comic-book yellow and blue detective clubhouse with Shinchan, a three-dimensional evidence desk, source folders, connected clue cards, and a case pinboard.</desc>
+  <defs>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#1d2026" opacity=".14"/></pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="150%" height="160%"><feOffset dx="8" dy="9"/><feGaussianBlur stdDeviation="0"/><feComponentTransfer><feFuncA type="linear" slope=".24"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="630" fill="#f6f0df"/>
+  <path d="M0 0h555L430 630H0z" fill="#ffd743"/>
+  <path d="M0 0h555L430 630H0z" fill="url(#dots)"/>
+  <path d="M548 0h652v630H430z" fill="#cde5ee"/>
+  <path d="M548 0h652v630H430z" fill="url(#dots)"/>
+  <g transform="translate(60 49)">
+    <rect width="95" height="95" rx="18" fill="#fffdf5" stroke="#1d2026" stroke-width="6"/>
+    <path d="M24 25h35l12 12v42H24z" fill="#fffdf5" stroke="#1d2026" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M57 26v13h13M33 49h29M33 59h20" stroke="#76b7da" stroke-width="4" fill="none"/>
+    <circle cx="42" cy="72" r="6" fill="#e94b3c" stroke="#1d2026" stroke-width="2"/><circle cx="59" cy="72" r="6" fill="#79a96d" stroke="#1d2026" stroke-width="2"/>
+    <circle cx="72" cy="74" r="13" fill="none" stroke="#1d2026" stroke-width="4"/><path d="m82 84 9 9" stroke="#1d2026" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="178" y="88" fill="#1d2026" font-family="'Space Grotesk',Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="3">THE MYSTERY-SOLVING CLUBHOUSE</text>
+  <text x="57" y="225" fill="#1d2026" font-family="'Bowlby One SC','Arial Black',sans-serif" font-size="83" letter-spacing="-2">SHINCHAN'S</text>
+  <text x="57" y="318" fill="#1d2026" font-family="'Bowlby One SC','Arial Black',sans-serif" font-size="83" letter-spacing="-2">CLUE CLUB</text>
+  <path d="M59 342h320" stroke="#1d2026" stroke-width="7"/>
+  <text x="61" y="396" fill="#1d2026" font-family="'Space Grotesk',Arial,sans-serif" font-size="26" font-weight="700">A mystery game about what the</text>
+  <text x="61" y="433" fill="#1d2026" font-family="'Space Grotesk',Arial,sans-serif" font-size="26" font-weight="700">evidence says — and leaves out.</text>
+  <g transform="translate(61 484) rotate(-2)">
+    <rect width="290" height="60" rx="7" fill="#e94b3c" stroke="#1d2026" stroke-width="4"/>
+    <text x="145" y="39" fill="#fffdf5" text-anchor="middle" font-family="'Space Grotesk',Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="1">FOLLOW EVERY CLUE →</text>
+  </g>
+  <!-- Clubhouse pinboard and connected source-to-mission chain -->
+  <g filter="url(#shadow)">
+    <path d="M579 52h548v251H579z" fill="#bd945f" stroke="#1d2026" stroke-width="6"/>
+    <path d="M595 67h516v219H595z" fill="#fff2c9" stroke="#1d2026" stroke-width="3"/>
+    <text x="626" y="103" fill="#315c77" font-family="'Space Grotesk',Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2">CASE BOARD · FILE 09</text>
+    <rect x="625" y="125" width="169" height="86" rx="5" fill="#fffdf5" stroke="#1d2026" stroke-width="3"/>
+    <path d="M640 142h49l10 10v41h-59z" fill="#76b7da" stroke="#1d2026" stroke-width="3"/>
+    <text x="713" y="158" fill="#1d2026" font-family="'Space Grotesk',Arial,sans-serif" font-size="14" font-weight="700">SOURCE</text>
+    <text x="713" y="179" fill="#5f6470" font-family="'Space Grotesk',Arial,sans-serif" font-size="12">Nov 05 · official</text>
+    <circle cx="817" cy="168" r="18" fill="#79a96d" stroke="#1d2026" stroke-width="3"/>
+    <text x="817" y="174" text-anchor="middle" fill="#fffdf5" font-family="'Space Grotesk',Arial,sans-serif" font-size="16" font-weight="700">✓</text>
+    <rect x="849" y="125" width="228" height="86" rx="5" fill="#fffdf5" stroke="#1d2026" stroke-width="3"/>
+    <text x="866" y="153" fill="#1d2026" font-family="'Space Grotesk',Arial,sans-serif" font-size="14" font-weight="700">REQUIREMENT</text>
+    <text x="866" y="177" fill="#315c77" font-family="'Space Grotesk',Arial,sans-serif" font-size="13">Family check-in gate</text>
+    <rect x="625" y="226" width="210" height="42" rx="5" fill="#f9d3c9" stroke="#1d2026" stroke-width="2"/>
+    <text x="640" y="253" fill="#8f2f25" font-family="'Space Grotesk',Arial,sans-serif" font-size="13" font-weight="700">! OLD FLYER DISAGREES</text>
+    <rect x="849" y="226" width="228" height="42" rx="5" fill="#fff0bd" stroke="#1d2026" stroke-width="2"/>
+    <text x="864" y="253" fill="#51431c" font-family="'Space Grotesk',Arial,sans-serif" font-size="13" font-weight="700">? DROP-OFF NOT CONFIRMED</text>
+    <path d="M795 168h34M817 189v27h-80M835 247h10" stroke="#1d2026" stroke-width="3" fill="none" stroke-dasharray="7 5"/>
+    <circle cx="818" cy="168" r="4" fill="#e94b3c"/>
+  </g>
+  <!-- isometric investigation desk -->
+  <path d="m515 329 592-8 91 86-587 10z" fill="#d3ae7a" stroke="#1d2026" stroke-width="5"/>
+  <path d="m611 417 587-10v113l-585 12z" fill="#ad7547" stroke="#1d2026" stroke-width="5"/>
+  <path d="m515 329 96 88v115l-94-83z" fill="#8b5e3a" stroke="#1d2026" stroke-width="5"/>
+  <!-- Shinchan-inspired 3D detective mascot -->
+  <g transform="translate(511 350)">
+    <ellipse cx="119" cy="166" rx="55" ry="12" fill="#1d2026" opacity=".18"/>
+    <path d="M84 117h30v51H84zM124 117h30v51h-30z" fill="#efc398" stroke="#1d2026" stroke-width="4"/>
+    <path d="M79 157h38v15H79zM120 157h38v15h-38z" fill="#fffdf5" stroke="#1d2026" stroke-width="4"/>
+    <path d="M72 70q-4 40 2 62h86q8-30 1-62z" fill="#e94b3c" stroke="#1d2026" stroke-width="5"/>
+    <path d="M62 84q-24 1-19 26l21 20 9-14zM161 83q27-3 22 21l-16 27-11-13z" fill="#e94b3c" stroke="#1d2026" stroke-width="5"/>
+    <path d="M67 30q0-48 54-48t55 48q0 49-55 49T67 30" fill="#f2c49f" stroke="#1d2026" stroke-width="5"/>
+    <path d="m64 0 11-31 16 19 15-29 15 23 14-23 14 26 19-16 12 36q-52-8-116-5" fill="#1d2026" stroke="#1d2026" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="104" cy="31" r="5" fill="#1d2026"/><circle cx="141" cy="31" r="5" fill="#1d2026"/>
+    <path d="M109 53q14 12 28 0" fill="none" stroke="#1d2026" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="85" cy="48" r="8" fill="#e94b3c"/><circle cx="158" cy="48" r="8" fill="#e94b3c"/>
+    <path d="M96 80h61l-6 15H99z" fill="#ffd743" stroke="#1d2026" stroke-width="4"/>
+    <path d="m166 101 45-41" stroke="#1d2026" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="218" cy="54" r="17" fill="none" stroke="#1d2026" stroke-width="7"/>
+  </g>
+  <!-- loose cards and signal tokens on the desk -->
+  <g transform="translate(837 365) rotate(-4)">
+    <path d="M0 0h111v100H0z" fill="#fffdf5" stroke="#1d2026" stroke-width="4"/>
+    <text x="14" y="27" fill="#315c77" font-family="'Space Grotesk',Arial,sans-serif" font-size="11" font-weight="700">EVIDENCE MAP</text>
+    <path d="M17 45h30M17 58h64M17 72h43" stroke="#7c888d" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="87" cy="74" r="10" fill="#e94b3c" stroke="#1d2026" stroke-width="2"/>
+  </g>
+  <g transform="translate(1005 376) rotate(5)">
+    <path d="M0 0h112v76H0z" fill="#fff0bd" stroke="#1d2026" stroke-width="4"/>
+    <text x="13" y="26" fill="#1d2026" font-family="'Space Grotesk',Arial,sans-serif" font-size="11" font-weight="700">VERIFY NEXT</text>
+    <path d="M16 43h74" stroke="#a27c26" stroke-width="4" stroke-linecap="round"/>
+    <path d="m16 58 8 8 17-18" fill="none" stroke="#79a96d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="780" y="559" width="352" height="36" rx="18" fill="#fffdf5" stroke="#1d2026" stroke-width="3"/>
+  <text x="956" y="583" text-anchor="middle" fill="#1d2026" font-family="'Space Grotesk',Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1">SOURCES → SIGNALS → SMARTER NEXT STEPS</text>
+</svg>

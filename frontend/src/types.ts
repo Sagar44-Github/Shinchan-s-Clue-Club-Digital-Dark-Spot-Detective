@@ -1,0 +1,14 @@
+export type Requirement = { id: string; category: string; label: string; importance: string; origin?: string; terms?: string[] }
+export type MysteryChoice = { id: string; label: string }
+export type MysteryChallenge = { opening: string; objective: string; final_question: string; choices: MysteryChoice[]; resolution?: string; bonus_source?: { filename: string; title: string; url: string }; demo_steps?: string[] }
+export type Source = { id: string; case_id: string; title: string; url: string; publisher: string; published_date: string; retrieved_at: string; source_type: string; text: string; content_hash: string; original_filename: string; extraction_note: string }
+export type Evidence = { source_id: string; source_title: string; url: string; published_date: string; quote: string; relation: string }
+export type Finding = { id: string; type: string; title: string; explanation: string; priority: string; evidence: Evidence[]; origin: string; requirement_category?: string; task?: { title: string; description: string; priority: string } }
+export type Claim = { id: string; source_id: string; source_title: string; quote: string; categories: string[]; date_or_value: string; origin: string; url: string; published_date: string; claim?: string; caveat?: string }
+export type Summary = { source_id: string; title: string; publisher: string; url: string; published_date: string; summary: string; evidence: Evidence[] }
+export type RequirementCoverage = { requirement: Requirement; status: string; claim_ids: string[]; evidence: Evidence[]; finding_ids: string[]; reason: string; next_step: string }
+export type Analysis = { question: string; method: string; ai_notice: string; source_ids: string[]; summary: Summary[]; claims: Claim[]; findings: Finding[]; coverage: RequirementCoverage[]; unanswered_questions: string[]; generated_at: string }
+export type Task = { id: string; finding_id: string; title: string; description: string; priority: string; status: string; notes: string; evidence: Evidence[]; sort_order: number; updated_at?: string }
+export type AnalysisRun = { id: string; created_at: string; method: string; result: Analysis }
+export type ResearchCase = { id: string; title: string; question: string; context: string; jurisdiction: string; decision_date: string; status: string; play_mode: 'challenge'|'guided'|'custom'; challenge?: MysteryChallenge|null; challenge_attempts: number; challenge_solved_at: string; requirements: Requirement[]; created_at: string; updated_at: string; sources: Source[]; analysis_runs: AnalysisRun[]; tasks: Task[] }
+export type LibraryCase = { slug: string; title: string; category: string; level: string; description: string; question: string; context: string; jurisdiction: string; decision_date: string; play_mode: 'challenge'|'guided'; challenge?: MysteryChallenge; source_count: number; requirement_count: number; sample_only: boolean }

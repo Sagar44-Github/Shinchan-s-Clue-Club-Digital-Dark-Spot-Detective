@@ -1,0 +1,546 @@
+[
+  {
+    "slug": "shinchan-school-fair-switcheroo",
+    "title": "Shinchan and the Great School-Fair Switcheroo",
+    "category": "Shinchan's School Files",
+    "level": "Unsolved field case · 12 min",
+    "play_mode": "challenge",
+    "description": "Three records disagree about the family entrance, check-in, and wristband. Import Shinchan’s missing access note, connect the evidence, then submit the full plan.",
+    "question": "For Futaba Kindergarten's family science fair on November 7, which entrance, check-in time, and wristband should our family use, what does the accessible-route note say, and what detail still needs confirmation?",
+    "context": "FICTIONAL TRAINING CASE — the kindergarten, fair, dates, people, directions and records are invented for this game. Start with the three records in the locker. Download and upload Shinchan’s bonus access update, then run the patrol. The accessible drop-off and parking detail is intentionally left unresolved.",
+    "jurisdiction": "Fictional Futaba Kindergarten",
+    "decision_date": "2026-11-07",
+    "requirements": [
+      {
+        "id": "req-fair-gate",
+        "category": "fair-gate",
+        "label": "Family check-in entrance",
+        "terms": [
+          "family check-in",
+          "check in at",
+          "meet at"
+        ],
+        "value_terms": [
+          "Main Gate",
+          "East Library Gate",
+          "Playground Gate"
+        ],
+        "compare_kind": "gate",
+        "importance": "high",
+        "origin": "challenge",
+        "must_mention": [
+          "East Library Gate"
+        ],
+        "preferred_source_pattern": "revised event bulletin"
+      },
+      {
+        "id": "req-fair-checkin",
+        "category": "fair-checkin",
+        "label": "Family check-in time",
+        "terms": [
+          "check-in",
+          "check in",
+          "family arrival"
+        ],
+        "value_terms": [
+          "9:00 AM",
+          "9:20 AM"
+        ],
+        "compare_kind": "checkin",
+        "importance": "high",
+        "origin": "challenge",
+        "must_mention": [
+          "9:20 AM"
+        ],
+        "preferred_source_pattern": "revised event bulletin"
+      },
+      {
+        "id": "req-fair-departure",
+        "category": "fair-departure",
+        "label": "Bus departure time",
+        "terms": [
+          "bus departs",
+          "bus leaves",
+          "departure"
+        ],
+        "value_terms": [
+          "9:35 AM"
+        ],
+        "importance": "high",
+        "origin": "challenge",
+        "must_mention": [
+          "Main Gate",
+          "9:35 AM"
+        ],
+        "preferred_source_pattern": "revised event bulletin"
+      },
+      {
+        "id": "req-fair-wristband",
+        "category": "fair-wristband",
+        "label": "Trip-day wristband",
+        "terms": [
+          "wristband",
+          "badge",
+          "name tag"
+        ],
+        "value_terms": [
+          "yellow badge",
+          "blue wristband",
+          "green name tag"
+        ],
+        "compare_kind": "wristband",
+        "importance": "high",
+        "origin": "challenge",
+        "must_mention": [
+          "blue wristband"
+        ],
+        "preferred_source_pattern": "revised event bulletin"
+      },
+      {
+        "id": "req-fair-ramp",
+        "category": "fair-access-route",
+        "label": "Step-free route and ramp opening",
+        "terms": [
+          "step-free ramp",
+          "step-free access",
+          "accessible route"
+        ],
+        "importance": "high",
+        "origin": "challenge",
+        "must_mention": [
+          "step-free ramp",
+          "East Library Gate",
+          "9:15 AM"
+        ]
+      },
+      {
+        "id": "req-fair-dropoff",
+        "category": "fair-accessible-dropoff",
+        "label": "Accessible parking or drop-off details",
+        "terms": [
+          "accessible drop-off",
+          "accessible parking",
+          "accessible drop off"
+        ],
+        "importance": "high",
+        "origin": "challenge",
+        "support_patterns": [
+          "accessible parking is available",
+          "accessible drop-off is available",
+          "accessible drop off is available",
+          "designated accessible drop-off",
+          "designated accessible drop off",
+          "accessible vehicle drop-off is located",
+          "accessible vehicle drop off is located",
+          "drop-off point is at",
+          "drop off point is at"
+        ],
+        "next_action": "Ask the fictional event desk whether accessible parking or drop-off is available, where it is located, and who can reserve it."
+      }
+    ],
+    "challenge": {
+      "opening": "Uh-oh! Shinchan found three different school-fair plans. Misae has a flyer, the parent chat has a rumor, and the latest event bulletin may have changed the rules. Find Shinchan’s missing access note before choosing.",
+      "objective": "Rebuild one evidence-backed family plan: entrance, check-in, wristband, bus departure and step-free route. Identify what the records still do not tell you.",
+      "final_question": "Which complete plan is supported by the reviewed records?",
+      "choices": [
+        {
+          "id": "old-flyer-plan",
+          "label": "Main Gate at 9:00 AM, yellow badge, and assume accessible drop-off is available."
+        },
+        {
+          "id": "rumor-plan",
+          "label": "Playground Gate at 9:00 AM, yellow badge, and use the old flyer for the access route."
+        },
+        {
+          "id": "evidence-plan",
+          "label": "East Library Gate check-in at 9:20 AM with a blue wristband; the bus leaves Main Gate at 9:35 AM; the step-free ramp opens at 9:15 AM; accessible parking/drop-off is still unconfirmed."
+        },
+        {
+          "id": "departure-as-checkin",
+          "label": "East Library Gate at 9:35 AM with a blue wristband; the ramp opens at 9:15 AM and accessible drop-off is confirmed."
+        }
+      ],
+      "answer_id": "evidence-plan",
+      "hints": [
+        "Start with the dates. Which record was issued most recently, and which earlier instructions does it replace?",
+        "In the revised bulletin, separate family check-in from bus departure. The access update gives a ramp opening time too.",
+        "Compare the exact gate, check-in time, and wristband in the November 5 bulletin. The access update never states parking or drop-off availability."
+      ],
+      "hint": "Separate the revised check-in instruction from the bus departure, then read the access note’s final sentence carefully.",
+      "resolution": "The November 5 organizer bulletin is the latest plan: families check in at East Library Gate at 9:20 AM with blue wristbands; the bus departs from Main Gate at 9:35 AM. The uploaded access update says the step-free ramp opens at East Library Gate at 9:15 AM. None of the reviewed records confirms accessible parking or drop-off, so that detail remains a question for the fictional event desk.",
+      "bonus_source": {
+        "filename": "fair-access-update.md",
+        "title": "Shinchan’s missing step-free access update",
+        "url": "/sample-files/fair-access-update.md"
+      },
+      "demo_steps": [
+        "Inspect the three starting records",
+        "Download and upload Shinchan’s access update",
+        "Run the evidence patrol",
+        "Trace a conflict and a gap on the 3D board",
+        "Compare dates and passages in Conflict Lab",
+        "Review requirement coverage",
+        "Submit the evidence-backed plan",
+        "Export the briefing with the unresolved detail"
+      ]
+    },
+    "sources": [
+      {
+        "title": "Old family flyer · October 20",
+        "publisher": "Futaba Kindergarten Family Desk · fictional",
+        "published_date": "2026-10-20",
+        "text": "FICTIONAL TRAINING RECORD — NOT A REAL SCHOOL NOTICE. For the family science fair on November 7, family check-in is at Main Gate at 9:00 AM. Children receive a yellow badge after check-in. This preliminary flyer was printed before the access route and event plan were final. It does not describe step-free access or accessible parking.",
+        "source_type": "curated fictional sample",
+        "url": "",
+        "extraction_note": "Fictional preliminary family flyer, later replaced by the revised event bulletin."
+      },
+      {
+        "title": "Organizer’s revised event bulletin · November 5",
+        "publisher": "Futaba Kindergarten Event Team · fictional",
+        "published_date": "2026-11-05",
+        "text": "FICTIONAL TRAINING RECORD — NOT A REAL SCHOOL NOTICE. REVISED ORGANIZER BULLETIN · November 5. For the family science fair on November 7, families check in at East Library Gate at 9:20 AM and receive a blue wristband. The bus departs from Main Gate at 9:35 AM after check-in. This revised bulletin replaces the October 20 family flyer. It does not specify accessible parking or drop-off.",
+        "source_type": "curated fictional sample",
+        "url": "",
+        "extraction_note": "Fictional revised organizer bulletin. It explicitly replaces the October 20 flyer."
+      },
+      {
+        "title": "Undated parent-chat screenshot · unverified rumor",
+        "publisher": "Unverified parent chat · fictional",
+        "published_date": "",
+        "text": "FICTIONAL TRAINING RECORD — UNDATED AND UNVERIFIED RUMOR. A forwarded parent-chat message claims families should check in at Playground Gate at 9:00 AM and that children should wear a yellow badge. The message has no visible author, official publisher, or publication date. Verify it against the organizer’s dated notice before relying on it.",
+        "source_type": "curated fictional sample · undated rumor",
+        "url": "",
+        "extraction_note": "Fictional unverified rumor included to demonstrate date and authority uncertainty."
+      }
+    ]
+  },
+  {
+    "slug": "class-trip-switcheroo",
+    "title": "Shinchan & the Class-Trip Switcheroo",
+    "category": "Shinchan's School Files",
+    "level": "Unsolved challenge · 15 min",
+    "play_mode": "challenge",
+    "description": "Three trip notices disagree about the gate, check-in time, and wristband. Rebuild the final plan from the dated evidence before the class bus leaves.",
+    "question": "Which arrival plan should Shinchan's class follow for the November field trip?",
+    "context": "UNSOLVED CLUB CHALLENGE — all school names, dates, routes, and notices here are fictional. Read the source dates, trace what changed, run the clue patrol, then submit your final plan in Mission Board.",
+    "jurisdiction": "Fictional Futaba Kindergarten",
+    "decision_date": "2026-11-07",
+    "challenge": {
+      "opening": "The class trip is tomorrow and the parent chat has three different plans. Shinchan has one bus and one very confused class.",
+      "objective": "Choose the correct check-in gate, arrival time, and wristband from the latest trip-day instructions.",
+      "final_question": "What exact plan should the family follow?",
+      "choices": [
+        {
+          "id": "north-900-yellow",
+          "label": "North Playground Gate at 9:00 AM with a yellow wristband."
+        },
+        {
+          "id": "main-915-green",
+          "label": "Main School Gate at 9:15 AM with a green name tag."
+        },
+        {
+          "id": "east-library-920-blue",
+          "label": "East Library Gate at 9:20 AM with a blue wristband."
+        },
+        {
+          "id": "east-library-935-blue",
+          "label": "East Library Gate at 9:35 AM with a blue wristband."
+        }
+      ],
+      "answer_id": "east-library-920-blue",
+      "hint": "Separate check-in time from bus departure, and compare the dated route card with the older flyers.",
+      "resolution": "The signed route card is the latest trip-day instruction: check in at the East Library Gate at 9:20 AM with a blue wristband. The bus leaves at 9:35 AM. The North Playground Gate is closed, while the Main Gate is only for bus loading."
+    },
+    "requirements": [
+      {
+        "id": "req-trip-date",
+        "category": "trip-date",
+        "label": "Correct field-trip date",
+        "terms": [
+          "November 7",
+          "trip day"
+        ],
+        "importance": "high",
+        "origin": "challenge"
+      },
+      {
+        "id": "req-meetup",
+        "category": "meetup-place",
+        "label": "Current family check-in gate",
+        "terms": [
+          "East Library Gate",
+          "North Playground Gate",
+          "Main School Gate"
+        ],
+        "importance": "high",
+        "origin": "challenge"
+      },
+      {
+        "id": "req-checkin",
+        "category": "check-in-time",
+        "label": "Check-in time versus bus departure",
+        "terms": [
+          "9:20 AM",
+          "9:35 AM",
+          "check in",
+          "bus leaves"
+        ],
+        "importance": "high",
+        "origin": "challenge"
+      },
+      {
+        "id": "req-wristband",
+        "category": "wristband",
+        "label": "Correct trip-day wristband",
+        "terms": [
+          "blue wristband",
+          "yellow wristband",
+          "green name tag"
+        ],
+        "importance": "normal",
+        "origin": "challenge"
+      }
+    ],
+    "sources": [
+      {
+        "title": "First field-trip flyer · family copy",
+        "publisher": "Futaba Kindergarten · Family Desk",
+        "published_date": "2026-10-02",
+        "text": "FICTIONAL CLUB CHALLENGE. The class field trip is Saturday, November 7. Families should meet at the North Playground Gate at 9:00 AM. Children will receive a yellow wristband after attendance. The bus is expected to leave at 9:25 AM. This flyer was printed before the route and gate checks were complete."
+      },
+      {
+        "title": "Revised field-trip flyer · version 2",
+        "publisher": "Futaba Kindergarten · Family Desk",
+        "published_date": "2026-10-05",
+        "text": "FICTIONAL CLUB CHALLENGE — REVISION 2. For the November 7 field trip, family check-in moves to the Main School Gate at 9:15 AM. Children should wear the green name tag from their classroom packet. The earlier North Playground Gate instruction is replaced. Bus loading begins after attendance. This flyer does not mention the gate construction notice."
+      },
+      {
+        "title": "Playground gate work notice",
+        "publisher": "Futaba Kindergarten · Site Team",
+        "published_date": "2026-10-06",
+        "text": "FICTIONAL CLUB CHALLENGE. The North Playground Gate will be locked on November 7 during path repairs. The East Library Gate is open and step-free for family arrival. The Main School Gate remains open for buses and staff vehicles, but it is not the family check-in point. Contact the class office if a later route card is issued."
+      },
+      {
+        "title": "Signed trip-day route card",
+        "publisher": "Futaba Kindergarten · Trip Lead Ms. Yoshinaga",
+        "published_date": "2026-10-08",
+        "text": "FICTIONAL CLUB CHALLENGE — FINAL ROUTE CARD FOR NOVEMBER 7. Families check in at the East Library Gate at 9:20 AM. Staff will identify the class with blue wristbands; do not use the green classroom name tag as the trip check-in marker. The bus departs from the Main School Gate at 9:35 AM after attendance. The North Playground Gate stays locked. This signed card replaces both earlier flyers."
+      }
+    ]
+  },
+  {
+    "slug": "shiros-lost-bell",
+    "title": "Shiro's Lost-Bell Trail",
+    "category": "Shiro's Pawprint Files",
+    "level": "Unsolved challenge · 12 min",
+    "play_mode": "challenge",
+    "description": "A tiny red bell vanished during Shiro's park walk. Reconstruct the route, follow the handoff, and find the claim tag that identifies the right item.",
+    "question": "Where is Shiro's bell now, and what claim tag should the Noharas give the attendant?",
+    "context": "UNSOLVED CLUB CHALLENGE — the park, people, timestamps, and lost-property log are fictional. Use the timeline and exact tag details to decide where Shinchan should look first.",
+    "jurisdiction": "Fictional Riverside Play Park",
+    "decision_date": "2026-11-03",
+    "challenge": {
+      "opening": "Shiro's red bell jingled all through the park walk, then vanished before lunch. Three helpers remember different places. Follow the pawprints and the handoff.",
+      "objective": "Use the walk log, volunteer notes, and lost-property record to identify the bell's current location and its claim tag.",
+      "final_question": "Where should Shinchan check first, and which tag proves the bell is Shiro's?",
+      "choices": [
+        {
+          "id": "pond-flowerbed",
+          "label": "Search the flowerbed beside the Pond Gate; no claim tag is needed."
+        },
+        {
+          "id": "west-fountain-bench",
+          "label": "Search under the covered West Fountain bench; tell staff it is a red bell."
+        },
+        {
+          "id": "gate-office-drawer-b",
+          "label": "Ask at the Gate Office, Lost Property Drawer B, using tag SB-17."
+        },
+        {
+          "id": "picnic-lawn-bin",
+          "label": "Check the picnic-lawn lost-and-found bin using tag W-14."
+        }
+      ],
+      "answer_id": "gate-office-drawer-b",
+      "hint": "One record tells you where the bell was spotted; the later log tells you where staff moved it and records its tag.",
+      "resolution": "The volunteer saw the bell near the West Fountain bench, but the lost-property log records the later handoff: it was moved to the Gate Office, Lost Property Drawer B. The item is tagged SB-17, which matches Shiro's collar note. W-14 is a route marker, not the bell's claim tag."
+    },
+    "requirements": [
+      {
+        "id": "req-last-seen",
+        "category": "last-seen",
+        "label": "Where the bell was last seen",
+        "terms": [
+          "West Fountain",
+          "Pond Gate",
+          "bell"
+        ],
+        "importance": "normal",
+        "origin": "challenge"
+      },
+      {
+        "id": "req-handoff",
+        "category": "handoff",
+        "label": "Current lost-property handoff location",
+        "terms": [
+          "Gate Office",
+          "Drawer B",
+          "Lost Property"
+        ],
+        "importance": "high",
+        "origin": "challenge"
+      },
+      {
+        "id": "req-claim-tag",
+        "category": "claim-tag",
+        "label": "Correct item claim tag",
+        "terms": [
+          "SB-17",
+          "W-14"
+        ],
+        "importance": "high",
+        "origin": "challenge"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Nohara family park-walk note",
+        "publisher": "Nohara family · Shinchan's clue notebook",
+        "published_date": "2026-10-22",
+        "text": "FICTIONAL CLUB CHALLENGE. On October 22, Shiro wore his small red collar bell with the handwritten tag SB-17. The family entered by Pond Gate at 10:02 AM and passed the flowerbed at about 10:08 AM. Misae remembers hearing the bell near the West Fountain around 10:18 AM. The note records where Shiro was, not where the bell was eventually recovered."
+      },
+      {
+        "title": "Volunteer route check · morning shift",
+        "publisher": "Riverside Play Park · Volunteer Desk",
+        "published_date": "2026-10-22",
+        "text": "FICTIONAL CLUB CHALLENGE. At 10:21 AM a volunteer heard a small bell under the covered bench at West Fountain. A child had noticed it while walking toward the picnic lawn. The volunteer placed the bell in a paper envelope so it would not roll into the drain, then handed the envelope to the roving attendant. The note does not say where the attendant stored it."
+      },
+      {
+        "title": "Lost-property handoff register · entry 44",
+        "publisher": "Riverside Play Park · Gate Office",
+        "published_date": "2026-10-22",
+        "text": "FICTIONAL CLUB CHALLENGE. Entry 44: one small red collar bell, tag SB-17, recovered in the volunteer envelope from the covered West Fountain bench. Roving attendant K. Sato received it at 10:29 AM and logged it at the Gate Office at 10:34 AM. Current storage: Lost Property Drawer B. Tag W-14 belongs to the west walking route marker and is not an item claim number. Owner may claim the bell at the Gate Office before closing."
+      },
+      {
+        "title": "Park route marker legend",
+        "publisher": "Riverside Play Park · Visitor Map Desk",
+        "published_date": "2026-09-30",
+        "text": "FICTIONAL CLUB CHALLENGE. The map labels the Pond Gate as P-2, the West Fountain as W-14, and the Gate Office as G-1. These are location markers for directions only. Lost-property items are filed by their own item tags, which begin with two letters followed by a number. The map has no storage information."
+      }
+    ]
+  },
+  {
+    "slug": "action-kamen-showtime",
+    "title": "Action Kamen's Showtime Switcheroo",
+    "category": "Action Kamen Missions",
+    "level": "Unsolved challenge · 14 min",
+    "play_mode": "challenge",
+    "description": "The hero-festival poster, venue note, and stage run sheet disagree. Separate guest check-in from performance time and find the final entrance and wristband.",
+    "question": "What plan gets Shinchan to the right entrance for Action Kamen's festival performance?",
+    "context": "UNSOLVED CLUB CHALLENGE — this hero festival and every schedule are fictional. Read the document versions carefully: doors, guest check-in, and stage time are different clues.",
+    "jurisdiction": "Fictional Hero Festival at Sunshine Hall",
+    "decision_date": "2026-11-14",
+    "challenge": {
+      "opening": "Action Kamen is coming to the hero festival! Shinchan found three schedules, two entrances, and a suspicious number of wristbands.",
+      "objective": "Build a reliable arrival plan by separating guest check-in, the stage performance, entrance, and wristband.",
+      "final_question": "Which plan matches the latest signed festival instructions?",
+      "choices": [
+        {
+          "id": "west-530-red-600",
+          "label": "West Hall doors at 5:30 PM, red badge, performance at 6:00 PM."
+        },
+        {
+          "id": "north-610-silver-635",
+          "label": "North Entrance at 6:10 PM with a silver pass, performance at 6:35 PM."
+        },
+        {
+          "id": "south-610-blue-640",
+          "label": "South Lobby check-in at 6:10 PM with a blue wristband; performance at 6:40 PM."
+        },
+        {
+          "id": "south-640-blue",
+          "label": "South Lobby at 6:40 PM with a blue wristband; that is when guest check-in begins."
+        }
+      ],
+      "answer_id": "south-610-blue-640",
+      "hint": "The latest run sheet keeps the guest check-in time separate from Action Kamen's stage slot.",
+      "resolution": "The signed run sheet is the latest source. Guests check in at the South Lobby at 6:10 PM with a blue wristband. Action Kamen's performance starts at 6:40 PM. The 6:00 PM time is the original show opening, and the North Entrance is closed for the event."
+    },
+    "requirements": [
+      {
+        "id": "req-checkin",
+        "category": "guest-check-in",
+        "label": "Guest check-in time",
+        "terms": [
+          "6:10 PM",
+          "guest check-in",
+          "doors"
+        ],
+        "importance": "high",
+        "origin": "challenge"
+      },
+      {
+        "id": "req-stage-time",
+        "category": "stage-time",
+        "label": "Action Kamen's stage time",
+        "terms": [
+          "6:40 PM",
+          "6:35 PM",
+          "performance"
+        ],
+        "importance": "high",
+        "origin": "challenge"
+      },
+      {
+        "id": "req-entrance",
+        "category": "venue-entrance",
+        "label": "Open guest entrance",
+        "terms": [
+          "South Lobby",
+          "North Entrance",
+          "West Hall"
+        ],
+        "importance": "normal",
+        "origin": "challenge"
+      },
+      {
+        "id": "req-wristband",
+        "category": "hero-wristband",
+        "label": "Current guest wristband",
+        "terms": [
+          "blue wristband",
+          "red badge",
+          "silver pass"
+        ],
+        "importance": "normal",
+        "origin": "challenge"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Hero Festival poster · first print",
+        "publisher": "Sunshine Hall · Festival Team",
+        "published_date": "2026-10-10",
+        "text": "FICTIONAL CLUB CHALLENGE. The Hero Festival is Saturday, November 14. West Hall doors open at 5:30 PM and the program begins at 6:00 PM. Action Kamen is listed as the opening act. Guests should show the red hero badge from the ticket envelope. This poster was printed before the stage order and building entrance plan were finalized."
+      },
+      {
+        "title": "Festival running order · revision 2",
+        "publisher": "Sunshine Hall · Stage Desk",
+        "published_date": "2026-10-12",
+        "text": "FICTIONAL CLUB CHALLENGE — REVISION 2. The program begins at 6:20 PM. Action Kamen's performance is scheduled for 6:35 PM after the mascot welcome. Guest check-in is listed at North Entrance at 6:10 PM. Attendees are told to bring the silver pass from the online booking email. This version predates the venue safety update."
+      },
+      {
+        "title": "Evening entrance and guest check-in update",
+        "publisher": "Sunshine Hall · Guest Safety Desk",
+        "published_date": "2026-10-14",
+        "text": "FICTIONAL CLUB CHALLENGE. For the November 14 evening festival, North Entrance is closed for equipment loading. Guests must enter through the South Lobby. Guest check-in begins at 6:10 PM; this is not the stage start time. The update says revised wristbands will be issued but does not name their color or give the final Action Kamen slot."
+      },
+      {
+        "title": "Signed Action Kamen stage run sheet",
+        "publisher": "Sunshine Hall · Stage Manager R. Kuroda",
+        "published_date": "2026-10-16",
+        "text": "FICTIONAL CLUB CHALLENGE — FINAL RUN SHEET FOR NOVEMBER 14. Guest check-in: South Lobby, 6:10 PM. Staff issue blue wristbands at the lobby desk; old red badges and silver passes are not the event check-in marker. Action Kamen's stage performance begins at 6:40 PM after the 6:25 PM mascot welcome. North Entrance remains closed. This signed run sheet replaces the first poster and revision 2 running order."
+      }
+    ]
+  }
+]

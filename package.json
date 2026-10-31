@@ -1,0 +1,13 @@
+{
+  "name": "kasukabe-gap-patrol",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c yellow,cyan \"cd backend && ..\\.venv\\Scripts\\python.exe -m uvicorn main:app --reload --port 8000\" \"npm --prefix frontend run dev -- --host 0.0.0.0\"",
+    "dev:web": "npm --prefix frontend run dev -- --host 0.0.0.0",
+    "dev:api": "cd backend && python -m uvicorn main:app --reload --port 8000",
+    "build": "npm --prefix frontend run build"
+  },
+  "devDependencies": { "concurrently": "^9.2.0" }
+}

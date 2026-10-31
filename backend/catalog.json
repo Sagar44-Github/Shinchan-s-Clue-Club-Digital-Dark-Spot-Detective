@@ -1,0 +1,189 @@
+[
+  {
+    "slug": "scholarship-round-lab",
+    "title": "Shinchan's Scholarship Puzzle",
+    "category": "Education & funding",
+    "level": "Detective · 20 min",
+    "description": "Reconcile an application notice, a general FAQ, and a department memo. Find the active deadline, the conflicting document list, and the renewal rule nobody wrote down.",
+    "question": "What should a student verify before applying for the Kasukabe Future Makers Scholarship?",
+    "context": "A fictional scholarship round assembled for the demonstration. Compare the current round notice with older general guidance and a department memo. Every organization and policy detail in this case is synthetic.",
+    "jurisdiction": "Fictional Kasukabe Education Trust",
+    "decision_date": "2026-11-10",
+    "requirements": [
+      {"id":"req-deadline","category":"deadline","label":"Current deadline and time zone","importance":"high","origin":"catalog"},
+      {"id":"req-eligibility","category":"eligibility","label":"Eligibility and exclusions","importance":"high","origin":"catalog"},
+      {"id":"req-documents","category":"documents","label":"Required documents","importance":"high","origin":"catalog"},
+      {"id":"req-renewal","category":"renewal","label":"Renewal and retention rules","importance":"normal","origin":"catalog"},
+      {"id":"req-submission","category":"submission","label":"Application route and link","importance":"normal","origin":"catalog"},
+      {"id":"req-fees","category":"fees","label":"Award amount and costs","importance":"normal","origin":"catalog"},
+      {"id":"req-contact","category":"contact","label":"Official contact route","importance":"normal","origin":"catalog"}
+    ],
+    "sources": [
+      {"title":"Future Makers · 2026–27 round notice (fictional)","publisher":"Kasukabe Education Trust · Sample Office","published_date":"2026-09-18","text":"SAMPLE CASE — THIS IS NOT A REAL SCHOLARSHIP. The 2026–27 Future Makers application window closes on November 18, 2026 at 5:00 PM Japan Standard Time. Eligible applicants are residents of the fictional Kasukabe district enrolled full time in an accredited program. Submit the online application, proof of enrollment, and the household income declaration through the applicant portal. The award is up to ¥240,000 for one academic year. This notice does not describe renewal criteria; recipients should request the renewal rules from the scholarship office before planning for a second year. Applicants can write to futuremakers@example.invalid for application assistance."},
+      {"title":"General applicant FAQ · archived copy (fictional)","publisher":"Kasukabe Education Trust · Sample Office","published_date":"2025-08-12","text":"SAMPLE CASE — THIS IS NOT A REAL SCHOLARSHIP. The general Future Makers FAQ says applications are reviewed in spring and recommends submitting by March 15. It lists proof of enrollment and a reference letter as required documents. The FAQ says awards may be renewed, but does not state the academic progress, credit load, or deadline needed to retain the award. It links applicants to the same online portal but does not identify the 2026–27 application round. Contact details in this archived page may no longer be current."},
+      {"title":"Department checklist · student support desk (fictional)","publisher":"Kasukabe Technical College · Sample Student Support Desk","published_date":"2026-10-02","text":"SAMPLE CASE — THIS IS NOT A REAL SCHOLARSHIP. The college support desk checklist for the 2026–27 Future Makers round asks students to prepare proof of enrollment, a household income declaration, and one reference letter. Staff say the portal accepts documents until the close of the round, but the checklist does not print a closing date or time zone. The office has not received the current renewal schedule. Students should compare this department checklist with the trust's round notice before uploading sensitive records."}
+    ]
+  },
+  {
+    "slug": "kasukabe-flood-route",
+    "title": "Shiro's Rainy-Day Rescue",
+    "category": "Community safety",
+    "level": "Field file · 18 min",
+    "description": "Compare a flood bulletin, a shelter access sheet, and a roadworks update. Decide which route and shelter details still need confirmation before a drill.",
+    "question": "Which flood evacuation route and shelter details should residents verify for the East Kasukabe practice drill?",
+    "context": "A fictional civic-preparedness exercise. The documents intentionally use mismatched update dates and one inaccessible route assumption. This file is a training scenario, not emergency guidance.",
+    "jurisdiction": "Fictional East Kasukabe Ward",
+    "decision_date": "2026-11-05",
+    "requirements": [
+      {"id":"req-drill-date","category":"drill-date","label":"Current drill date and hours","terms":["drill","practice","opens","closes","hours"],"importance":"high","origin":"catalog"},
+      {"id":"req-route","category":"accessible-route","label":"Accessible evacuation route","terms":["accessible","step-free","ramp","route","construction","detour"],"importance":"high","origin":"catalog"},
+      {"id":"req-shelter","category":"shelter-capacity","label":"Shelter location and open status","terms":["shelter","gymnasium","open","capacity","entrance"],"importance":"high","origin":"catalog"},
+      {"id":"req-pets","category":"pet-policy","label":"Pet and mobility support","terms":["pet","mobility","wheelchair","assistance"],"importance":"normal","origin":"catalog"},
+      {"id":"req-contact","category":"contact","label":"Emergency information contact","importance":"normal","origin":"catalog"}
+    ],
+    "sources": [
+      {"title":"East Ward flood drill bulletin (fictional)","publisher":"East Kasukabe Ward · Sample Preparedness Office","published_date":"2026-10-14","text":"SAMPLE CASE — NOT FOR REAL EMERGENCIES. The East Ward practice drill is scheduled for November 5, 2026, from 9:00 AM to noon. The bulletin directs residents toward the Riverside Community Gym shelter using the riverside promenade. The gym is listed as a temporary drill shelter, not a permanent refuge. Residents who need step-free access should call the sample preparedness desk before the drill. Bring identification and any personal medication. This notice does not list shelter capacity or pet arrangements. For current exercise information call 555-0101."},
+      {"title":"Shelter access sheet · Riverside Gym (fictional)","publisher":"East Kasukabe Ward · Sample Facilities Desk","published_date":"2026-10-20","text":"SAMPLE CASE — NOT FOR REAL EMERGENCIES. The Riverside Community Gym access sheet lists the north entrance as step-free and says the accessible route follows the school lane. This access sheet schedules the flood practice drill from 10:00 AM to 1:00 PM; doors open at 8:30 AM for setup and arrival. The gym can receive up to 180 participants. Service animals are permitted; other pets should remain with a support person outside the main floor. The sheet was posted after the East Ward bulletin and names the school lane rather than the riverside promenade as the preferred accessible approach. Call 555-0102 to ask about mobility support."},
+      {"title":"School Lane roadworks update (fictional)","publisher":"East Kasukabe Ward · Sample Works Unit","published_date":"2026-10-23","text":"SAMPLE CASE — NOT FOR REAL EMERGENCIES. The School Lane works notice says construction fencing will block the west sidewalk from October 28 through November 12, 2026. A signed detour is planned along the library path, but the update does not say whether that detour is step-free or wide enough for mobility devices. The notice lists the Riverside Gym north entrance as reachable from School Lane. It does not mention the flood drill or confirm that the north entrance will be staffed. The works unit can be reached at 555-0103."}
+    ]
+  },
+  {
+    "slug": "festival-access-audit",
+    "title": "Crayon Carnival Access Mystery",
+    "category": "Event planning",
+    "level": "Crowd scout · 16 min",
+    "description": "Audit an event page, a venue map, and an organizer update for access routes, event hours, quiet space, and what guests can actually rely on.",
+    "question": "What access and arrival details should a guest verify before attending the Kasukabe Lantern Festival?",
+    "context": "A fictional inclusive-event review. Sources are intentionally plausible but disagree about the step-free entrance and quiet room hours.",
+    "jurisdiction": "Fictional Kasukabe Riverside Park",
+    "decision_date": "2026-11-14",
+    "requirements": [
+      {"id":"req-event-hours","category":"event-hours","label":"Festival date and entry hours","terms":["festival","opens","closes","admission","November 14"],"importance":"high","origin":"catalog"},
+      {"id":"req-stepfree","category":"step-free-access","label":"Step-free entrance and route","terms":["step-free","ramp","accessible entrance","north gate","east gate"],"importance":"high","origin":"catalog"},
+      {"id":"req-quiet","category":"quiet-space","label":"Quiet room location and hours","terms":["quiet room","sensory","rest space","open"],"importance":"normal","origin":"catalog"},
+      {"id":"req-fees","category":"fees","label":"Ticket price and access costs","importance":"normal","origin":"catalog"},
+      {"id":"req-contact","category":"contact","label":"Event access contact","importance":"normal","origin":"catalog"}
+    ],
+    "sources": [
+      {"title":"Lantern Festival visitor page (fictional)","publisher":"Kasukabe Lantern Festival · Sample Organizers","published_date":"2026-10-11","text":"SAMPLE CASE — NOT A REAL EVENT. The Kasukabe Lantern Festival takes place November 14, 2026, from 4:00 PM to 9:00 PM at Riverside Park. Admission is free; food and activity booths are individually priced. The visitor page identifies the north gate as the step-free entrance and says the quiet room in the library annex will be open from 4:00 PM to 8:00 PM. Guests may request a printed large-type map at the welcome desk. For access questions, contact access@example.invalid."},
+      {"title":"Riverside Park event map (fictional)","publisher":"Kasukabe Parks Office · Sample Mapping Desk","published_date":"2026-10-16","text":"SAMPLE CASE — NOT A REAL EVENT. The festival map marks the east gate as the step-free entrance and shows a ramped route along the canal path. The north gate is marked as stairs-only because of the temporary lantern arch. The map places the quiet room inside the recreation hall, not the library annex, and does not show operating hours. The east gate route adds approximately 250 metres from the public bus stop. Contact the mapping desk at 555-0144 if the printed route looks different on event day."},
+      {"title":"Organizer access update (fictional)","publisher":"Kasukabe Lantern Festival · Sample Organizers","published_date":"2026-10-24","text":"SAMPLE CASE — NOT A REAL EVENT. A temporary stage installation has changed the planned arrival route. Organizers now expect the north gate to open for all guests at 4:30 PM, but the access update does not confirm a ramp or other step-free route at that gate. The east gate is expected to remain open from 4:00 PM. The quiet room has moved to the recreation hall and is planned to operate from 5:00 PM to 8:30 PM. The visitor page and map have not yet been replaced. Organizers ask guests to check the event board at the east gate or contact access@example.invalid on the day."}
+    ]
+  },
+  {
+    "slug": "rental-cost-forensics",
+    "title": "Nohara's Moving-Day Money Mystery",
+    "category": "Consumer research",
+    "level": "Fine-print hunt · 17 min",
+    "description": "Trace a fictional rental offer across its listing, fee schedule, and lease summary. Separate recurring rent from move-in charges and spot missing refund terms.",
+    "question": "What should a renter confirm about the Kasukabe Garden Flats move-in cost before signing?",
+    "context": "A fictional housing offer used for consumer-literacy practice. It is not legal advice and does not describe a real property or landlord.",
+    "jurisdiction": "Fictional Kasukabe Garden Flats",
+    "decision_date": "2026-11-02",
+    "requirements": [
+      {"id":"req-monthly","category":"monthly-cost","label":"Monthly rent and recurring charges","terms":["monthly rent","maintenance","utilities","monthly"],"importance":"high","origin":"catalog"},
+      {"id":"req-upfront","category":"upfront-fees","label":"Up-front move-in fees and deposit","terms":["deposit","key fee","move-in","refundable","yen"],"importance":"high","origin":"catalog"},
+      {"id":"req-refund","category":"refund-terms","label":"Deposit refund conditions","terms":["refund","deduction","inspection","deposit"],"importance":"high","origin":"catalog"},
+      {"id":"req-lease","category":"lease-term","label":"Lease length and cancellation notice","terms":["lease","notice","cancel","months"],"importance":"normal","origin":"catalog"},
+      {"id":"req-contact","category":"contact","label":"Written contact for fee questions","importance":"normal","origin":"catalog"}
+    ],
+    "sources": [
+      {"title":"Garden Flats rental listing (fictional)","publisher":"Kasukabe Garden Flats · Sample Leasing Desk","published_date":"2026-10-04","text":"SAMPLE CASE — NOT A REAL RENTAL OFFER. Garden Flats unit 2B is listed at ¥82,000 per month, with a ¥5,000 monthly building maintenance charge. The listing advertises a refundable security deposit equal to one month's rent and no key fee. Electricity and water are billed separately. The listing says a standard lease is two years and requires one month's written notice before moving out. It does not explain which cleaning or repair costs may be deducted from the deposit. Send questions to leasing@example.invalid."},
+      {"title":"Move-in fee schedule · version B (fictional)","publisher":"Kasukabe Garden Flats · Sample Leasing Desk","published_date":"2026-10-07","text":"SAMPLE CASE — NOT A REAL RENTAL OFFER. The fee schedule for unit 2B lists first month's rent of ¥82,000, maintenance of ¥5,000, an administration fee of ¥22,000, and a refundable deposit of ¥100,000. The schedule also lists a ¥16,000 key exchange fee. Utility setup is paid by the tenant. This schedule does not define the inspection standard or the timing for deposit return. It was issued three days after the public listing, whose advertised deposit and key-fee terms differ."},
+      {"title":"Lease summary · unsigned sample (fictional)","publisher":"Kasukabe Garden Flats · Sample Leasing Desk","published_date":"2026-10-09","text":"SAMPLE CASE — NOT A REAL RENTAL OFFER. The unsigned lease summary states that the initial term is twenty-four months and that cancellation requires sixty days' written notice. It allows deductions for cleaning beyond ordinary wear and for unpaid utility balances, but gives no itemized cleaning rate. It says the remaining deposit will be returned within thirty days after key return and inspection. The summary does not identify which fee schedule is incorporated into the final lease. Request the complete signed fee appendix before paying any move-in amount."}
+    ]
+  },
+  {
+    "slug": "night-bus-route-audit",
+    "title": "Shinchan's Night Bus Mission",
+    "category": "Mobility & transit",
+    "level": "Route tracker · 15 min",
+    "description": "Check a route timetable, a service alert, and a stop accessibility sheet. Find the last-trip mismatch and the detour details that remain unpublished.",
+    "question": "What should a rider verify before relying on the Kasukabe Night Loop after 10 PM?",
+    "context": "A fictional transit-information audit. This sample is designed to show conflicting schedule snapshots and accessibility uncertainty; it is not a real timetable.",
+    "jurisdiction": "Fictional Kasukabe Night Loop",
+    "decision_date": "2026-11-01",
+    "requirements": [
+      {"id":"req-last-trip","category":"last-trip","label":"Current last departure and service day","terms":["last departure","last bus","10:45 PM","11:10 PM","weekend"],"importance":"high","origin":"catalog"},
+      {"id":"req-detour","category":"detour","label":"Current route and temporary detours","terms":["detour","route","stop","construction"],"importance":"high","origin":"catalog"},
+      {"id":"req-accessibility","category":"stop-access","label":"Step-free boarding and stop access","terms":["low-floor","wheelchair","step-free","lift","accessible"],"importance":"normal","origin":"catalog"},
+      {"id":"req-fare","category":"fare","label":"Fare and payment options","terms":["fare","yen","payment","card"],"importance":"normal","origin":"catalog"},
+      {"id":"req-contact","category":"contact","label":"Live service information contact","importance":"normal","origin":"catalog"}
+    ],
+    "sources": [
+      {"title":"Night Loop timetable · autumn edition (fictional)","publisher":"Kasukabe Transit · Sample Route Office","published_date":"2026-09-28","text":"SAMPLE CASE — NOT A REAL TIMETABLE. The autumn Night Loop timetable lists the final departure from Central Station at 10:45 PM on weekdays and 11:10 PM on Fridays and Saturdays. Sunday service ends at 10:15 PM. The listed adult fare is ¥240; contactless transit cards and exact cash are accepted. The timetable says all buses on the loop are low-floor, but stop-level boarding conditions are not listed. Timetable questions can be sent to transit@example.invalid."},
+      {"title":"Central Avenue roadworks service alert (fictional)","publisher":"Kasukabe Transit · Sample Operations Desk","published_date":"2026-10-19","text":"SAMPLE CASE — NOT A REAL TIMETABLE. Central Avenue construction reroutes the Night Loop from October 21 through November 8. The temporary route skips the Library stop after 9:30 PM and adds a temporary stop at the west market entrance. The alert does not state whether the detour changes the final departure time or whether the temporary stop has a level boarding pad. Riders needing step-free boarding should call 555-0188 before traveling. This alert is more recent than the autumn timetable."},
+      {"title":"Stop accessibility register · public extract (fictional)","publisher":"Kasukabe Transit · Sample Access Team","published_date":"2026-10-21","text":"SAMPLE CASE — NOT A REAL TIMETABLE. The stop register marks Central Station and West Market as step-free boarding locations. It marks the Library stop as curb boarding only with no raised platform. The register notes that low-floor vehicles may be reassigned during late service. It does not specifically address the roadworks detour or confirm that West Market's temporary stop has lighting after 10 PM. For a live vehicle check, call 555-0188."}
+    ]
+  },
+  {
+    "slug": "e-waste-drop-day",
+    "title": "Shiro's Gadget Recycling Hunt",
+    "category": "Civic services",
+    "level": "Drop-site scout · 14 min",
+    "description": "Compare the city's drop-day flyer, accepted-items list, and site operations note. Resolve which electronics are accepted and what handling steps are required.",
+    "question": "What should a resident check before bringing electronics to the Kasukabe Autumn Reuse Day?",
+    "context": "A fictional recycling-event information exercise. The sample records do not describe actual municipal disposal rules.",
+    "jurisdiction": "Fictional Kasukabe Civic Center",
+    "decision_date": "2026-11-07",
+    "requirements": [
+      {"id":"req-date","category":"drop-date","label":"Current collection date and hours","terms":["November 7","opens","closes","collection hours"],"importance":"high","origin":"catalog"},
+      {"id":"req-items","category":"accepted-items","label":"Accepted electronics and item limits","terms":["laptop","tablet","battery","television","accepted","limit"],"importance":"high","origin":"catalog"},
+      {"id":"req-prep","category":"device-prep","label":"Data wiping and battery preparation","terms":["data","wipe","battery","remove","tape"],"importance":"normal","origin":"catalog"},
+      {"id":"req-cost","category":"drop-cost","label":"Fees and no-charge items","terms":["fee","free","charge","yen"],"importance":"normal","origin":"catalog"},
+      {"id":"req-contact","category":"contact","label":"Drop-site contact and exceptions","importance":"normal","origin":"catalog"}
+    ],
+    "sources": [
+      {"title":"Autumn Reuse Day community flyer (fictional)","publisher":"Kasukabe Civic Center · Sample Waste Desk","published_date":"2026-10-03","text":"SAMPLE CASE — NOT REAL MUNICIPAL GUIDANCE. Autumn Reuse Day is scheduled for November 7, 2026, from 10:00 AM to 3:00 PM in the Civic Center east lot. The flyer accepts laptops, tablets, small printers, and household cables at no charge. It says televisions and loose batteries are not accepted. Residents should remove personal data before drop-off. The flyer does not state an item limit or whether devices with built-in batteries must be taped. Contact the sample waste desk at 555-0171."},
+      {"title":"Accepted-items register · sample web extract (fictional)","publisher":"Kasukabe Civic Center · Sample Waste Desk","published_date":"2026-10-17","text":"SAMPLE CASE — NOT REAL MUNICIPAL GUIDANCE. The accepted-items register includes laptops, tablets, small printers, and televisions up to 24 inches. It says no more than three devices per household and identifies loose lithium batteries as accepted only when their terminals are taped. The register describes the east lot as open from 10:00 AM to 2:00 PM, one hour earlier than the community flyer. It does not mention data wiping or fees for televisions."},
+      {"title":"Drop-site operations note (fictional)","publisher":"Kasukabe Civic Center · Sample Site Crew","published_date":"2026-10-22","text":"SAMPLE CASE — NOT REAL MUNICIPAL GUIDANCE. The operations crew plans to keep the east lot open until 3:00 PM on November 7. Staff can accept up to three devices per household. Devices with storage should be factory-reset by their owner before arrival; staff cannot wipe data at the site. Loose batteries are not accepted at the event, even if taped. The operations note says televisions will be routed to a separate collection lane with a ¥300 handling fee. The public register has not been updated with these handling instructions."}
+    ]
+  },
+  {
+    "slug": "community-microgrant",
+    "title": "The Nohara Neighborhood Garden Quest",
+    "category": "Funding & civic life",
+    "level": "Application analyst · 19 min",
+    "description": "Follow a community grant notice through the eligibility guide and application checklist. Compare deadlines, eligible groups, budget caps, and missing reporting obligations.",
+    "question": "What should the Kasukabe Neighbourhood Garden team verify before applying for the Small Places Microgrant?",
+    "context": "A fictional grant program scenario. The three documents were written for different rounds and intentionally leave reporting conditions unclear.",
+    "jurisdiction": "Fictional Small Places Foundation",
+    "decision_date": "2026-11-12",
+    "requirements": [
+      {"id":"req-deadline","category":"deadline","label":"Current grant deadline and time zone","importance":"high","origin":"catalog"},
+      {"id":"req-eligibility","category":"eligibility","label":"Eligible organizations and geography","importance":"high","origin":"catalog"},
+      {"id":"req-documents","category":"documents","label":"Required application attachments","importance":"high","origin":"catalog"},
+      {"id":"req-award","category":"award-cap","label":"Grant amount and matching funds","terms":["grant","award","¥","match","budget"],"importance":"high","origin":"catalog"},
+      {"id":"req-reporting","category":"reporting","label":"Post-award reporting conditions","terms":["report","receipt","progress","renew"],"importance":"normal","origin":"catalog"},
+      {"id":"req-contact","category":"contact","label":"Grant administrator contact","importance":"normal","origin":"catalog"}
+    ],
+    "sources": [
+      {"title":"Small Places Microgrant · 2026 notice (fictional)","publisher":"Small Places Foundation · Sample Grants Desk","published_date":"2026-10-01","text":"SAMPLE CASE — NOT A REAL GRANT. The 2026 Small Places Microgrant accepts applications until November 12, 2026 at 4:00 PM Japan Standard Time. Informal resident groups and registered community organizations in the fictional Kasukabe district may apply. Awards range from ¥50,000 to ¥300,000. The notice requests a one-page project plan and a simple budget. It does not mention a matching-funds requirement or list post-award reporting dates. Submit through the foundation's sample grant portal. Questions: grants@example.invalid."},
+      {"title":"Applicant eligibility guide · current cycle (fictional)","publisher":"Small Places Foundation · Sample Grants Desk","published_date":"2026-10-05","text":"SAMPLE CASE — NOT A REAL GRANT. The eligibility guide allows unregistered resident groups when two local residents sign the application. Applicants must be based in Kasukabe and show that the project benefits at least one neighborhood. The guide requires a project plan, line-item budget, and signed community support letter. It does not state whether the foundation requires a matching contribution. Applicants should retain receipts, but this version does not state when a completion report is due."},
+      {"title":"Microgrant budget worksheet · prior-cycle copy (fictional)","publisher":"Small Places Foundation · Sample Grants Desk","published_date":"2025-05-16","text":"SAMPLE CASE — NOT A REAL GRANT. The prior-cycle worksheet caps awards at ¥250,000 and asks applicants to show a 10 percent local match in cash or donated materials. It asks for a project plan, line-item budget, support letter, and proof of organization registration. The worksheet says a progress report is due six months after award and original receipts must be kept for three years. It does not establish the cap, match, or document rules for the current 2026 cycle."}
+    ]
+  },
+  {
+    "slug": "subscription-cancellation-case",
+    "title": "The Sticky Subscription Mystery",
+    "category": "Consumer rights",
+    "level": "Terms investigator · 16 min",
+    "description": "Investigate a fictional service's plan page, cancellation help article, and billing terms. Reconstruct renewal timing, cancellation cutoffs, and refund language from scattered pages.",
+    "question": "What should a customer verify before cancelling the fictional Kasukabe Cloud Plus plan?",
+    "context": "A synthetic consumer-information exercise, not legal or financial advice. It practices tracing a single decision across marketing, help, and contract text.",
+    "jurisdiction": "Fictional Kasukabe Cloud",
+    "decision_date": "2026-11-01",
+    "requirements": [
+      {"id":"req-renewal","category":"renewal","label":"Renewal date and billing cycle","importance":"high","origin":"catalog"},
+      {"id":"req-cancel","category":"cancellation-window","label":"Cancellation steps and cutoff","terms":["cancel","cancellation","cutoff","before renewal","settings"],"importance":"high","origin":"catalog"},
+      {"id":"req-refund","category":"refund-policy","label":"Refund eligibility after cancellation","terms":["refund","pro-rated","billing period","charge"],"importance":"high","origin":"catalog"},
+      {"id":"req-export","category":"data-export","label":"Data export and account access window","terms":["export","download","access","delete","data"],"importance":"normal","origin":"catalog"},
+      {"id":"req-contact","category":"contact","label":"Billing support contact","importance":"normal","origin":"catalog"}
+    ],
+    "sources": [
+      {"title":"Cloud Plus plan page (fictional)","publisher":"Kasukabe Cloud · Sample Product Team","published_date":"2026-10-09","text":"SAMPLE CASE — NOT A REAL SERVICE. Cloud Plus is billed at ¥1,200 per month and renews automatically on the same calendar date as the original signup. The plan page says customers can cancel any time in account settings and will keep premium access through the end of their paid period. It does not say whether unused days are refunded. The page advertises a 14-day trial but does not specify the final cancellation hour. Billing support: billing@example.invalid."},
+      {"title":"Help article · cancel a plan (fictional)","publisher":"Kasukabe Cloud · Sample Help Center","published_date":"2026-10-15","text":"SAMPLE CASE — NOT A REAL SERVICE. The help article says cancellation must be completed at least 24 hours before the renewal timestamp to prevent the next charge. Customers can cancel from Settings, then Billing, then End plan. Premium features remain active until the current billing period ends. The article says monthly charges are not prorated after a renewal has processed. It does not mention the 14-day trial or explain how to export stored files after cancellation."},
+      {"title":"Cloud Plus billing terms · revision 4 (fictional)","publisher":"Kasukabe Cloud · Sample Terms Desk","published_date":"2026-10-18","text":"SAMPLE CASE — NOT A REAL SERVICE. The billing terms define renewal as midnight UTC on the anniversary date, which may differ from the local calendar date shown in account settings. Trial users must cancel before 11:59 PM local time on the day before conversion. The terms say refunds are considered only for duplicate charges or service outages, not for an unused portion of a regular monthly period. Account exports remain available for 30 days after cancellation; stored files may be deleted after that period. The help article does not specify the time zone for its 24-hour cancellation cutoff."}
+    ]
+  }
+]
