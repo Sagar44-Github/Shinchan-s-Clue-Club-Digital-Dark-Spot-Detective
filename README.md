@@ -31,6 +31,12 @@ Open PowerShell in the project folder and run:
 
 Optional AI extraction can be enabled by setting `OPENAI_API_KEY` and `OPENAI_MODEL` in `backend/.env`. The key stays on the backend. When enabled, source text is sent to the OpenAI API for advisory extraction; candidate quotations are checked against the stored source snapshot.
 
+## Project demo video
+
+[Watch or download the narrated Shinchan's Clue Club demo (MP4)](assets/demo-video/Shinchan-Clue-Club-Demo.mp4). The 2:26 walkthrough follows the judge path across the clubhouse welcome, Shinchan's 3D evidence map, source comparison, the playable School-Fair mystery, its evidence-backed verdict, and the unresolved item in the exported briefing.
+
+The deliverables include the [editable PowerPoint source deck](assets/demo-video/Shinchan-Clue-Club-Demo-Source.pptx) and the [video narration script](assets/demo-video/VIDEO-SCRIPT.md).
+
 ## Hackathon problem → implementation
 
 | Expected outcome | What Clue Club does | Where to see it |
